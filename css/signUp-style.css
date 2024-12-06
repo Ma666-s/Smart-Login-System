@@ -1,3 +1,6 @@
+.row {
+    border-left: 10px solid #000;
+}
 #registerId:hover a
 {
     color: white !important;
