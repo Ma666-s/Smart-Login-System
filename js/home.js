@@ -10,7 +10,7 @@ if(localStorage.getItem("name") != null){
         icon: "success",
         title: "Login Successful",
         showConfirmButton: false,
-        timer: 1500
+        timer: 2000
       });
       // Message welcome username in home 
     userTag.innerHTML="Welcome "+ userName
