@@ -1,0 +1,21 @@
+.row {
+    border-left: 10px solid #000;
+}
+input:focus
+{
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0,128,0,0.50) !important;
+    -webkit-box-shadow: 0.5px 0.5px 5px 1px rgba(0,128,0,0.50) !important;
+    -moz-box-shadow: 0.5px 0.5px 5px 1px rgba(0,128,0,0.50) !important;  
+}
+@media screen and (max-width : 700px) {
+    .media-size
+    {
+        font-size: 29px;
+    }
+}
+@media screen and (min-width : 700px) and (max-width : 992px){
+    .media-size
+    {
+        font-size: 34px;
+    }
+}
