@@ -1,11 +1,140 @@
-.row {
-    border-left: 10px solid #000;
-}
-@media screen and (max-width : 700px) {
-    #user
-    {
-        font-size: 20px;
-        margin: 0;
-        text-align: left !important;
+/* General Styles */
+:root {
+    --primary-color: #198754;
+    --secondary-color: #f8f9fa;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .dropdown-menu {
+    border: none;
+    box-shadow: var(--card-shadow);
+  }
+  
+  /* Main Content Styles */
+  .card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .display-5 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .text-muted {
+    opacity: 0.8;
+  }
+  
+  /* Features Section */
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 2rem 0;
+  }
+  
+  /* Welcome Message */
+  #username {
+    color: var(--primary-color);
+    display: inline-block;
+  }
+  
+  /* Dark Mode Support */
+  [data-bs-theme="dark"] {
+    --secondary-color: #212529;
+    --dark-color: #f8f9fa;
+  }
+  
+  [data-bs-theme="dark"] .card {
+    background-color: #2c3034;
+    color: var(--light-color);
+  }
+  
+  [data-bs-theme="dark"] .text-muted {
+    color: #adb5bd !important;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .welcome-card {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .display-5 {
+      font-size: 2.5rem;
     }
-}
+  }
+  
+  @media (max-width: 768px) {
+    .display-5 {
+      font-size: 2rem;
+    }
+    
+    .lead {
+      font-size: 1rem;
+    }
+    
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .display-5 {
+      font-size: 1.75rem;
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    footer {
+      text-align: center;
+    }
+    
+    .text-md-end {
+      text-align: center !important;
+      margin-top: 1rem;
+    }
+  }

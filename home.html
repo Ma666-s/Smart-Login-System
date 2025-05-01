@@ -1,53 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="./css/all.min.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/home-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Smart Login System Dashboard">
+    <title>Dashboard | Smart Login System</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/home-style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
-
 <body>
-  <!-- Section nav start -->
-  <nav class="navbar navbar-expand-lg bg-success-subtle shadow">
-    <div class="container">
-      <a class="navbar-brand display-3 fw-bolder" href="#">Smart Login</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html"><button
-                class="btn btn-outline-dark w-100">Log out</button></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Section nav end -->
-
-  <!-- Section home start -->
-  <section class="bg-success-subtle min-vh-100">
-    <div class="container d-flex justify-content-center">
-      <div class="row w-100 p-5 d-flex justify-content-center my-5 bg-dark-subtle rounded-5">
-        <div class="col-md-10 bg-light border rounded-top-5 shadow">
-          <div class="bg-lights p-5">
-              <h1 class="display-3 text-center w-100" id="user"></h1>
-          </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 d-flex align-items-center" href="#">
+                <i class="fas fa-user-shield me-2"></i>
+                Smart Login
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" 
+                           id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-2 fs-5"></i>
+                            <span id="usernameNav"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- Section home end -->
+    </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="./js/bootstrap.bundle.min.js"></script>
-  <script src="js/home.js"></script>
+    <!-- Main Content -->
+    <main class="bg-light min-vh-100">
+        <div class="container py-5">
+            <!-- Welcome Section -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5 text-center">
+                            <h1 class="display-5 fw-bold text-success mb-3">
+                                Welcome, <span id="username"></span>!
+                            </h1>
+                            <p class="lead text-muted">
+                                You have successfully logged in to Smart Login System
+                            </p>
+                            <div class="mt-4">
+                                <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                                <i class="fas fa-shield-alt fa-2x text-success"></i>
+                            </div>
+                            <h3 class="h5 fw-bold">Secure Account</h3>
+                            <p class="text-muted">Your account is protected with our advanced security system.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                                <i class="fas fa-cogs fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="h5 fw-bold">Easy Settings</h3>
+                            <p class="text-muted">Customize your experience with our user-friendly settings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-info bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                                <i class="fas fa-bell fa-2x text-info"></i>
+                            </div>
+                            <h3 class="h5 fw-bold">Notifications</h3>
+                            <p class="text-muted">Stay updated with our real-time notification system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="fw-bold">Smart Login System</h5>
+                    <p class="text-muted">A secure and smart authentication solution for your needs.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        &copy; <span id="currentYear"></span> Smart Login System. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/home.js"></script>
 </body>
-
 </html>
